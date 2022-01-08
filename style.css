@@ -1,0 +1,37 @@
+/*
+font-family: 'Kumbh Sans', sans-serif;
+*/
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: hsl(237, 12%, 33%);
+}
+
+.u-margin-big {
+}
+.u-margin-small {
+}
+.u-margin-medium {
+}
+
+.card-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
