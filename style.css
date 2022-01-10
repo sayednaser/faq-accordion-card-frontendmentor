@@ -18,20 +18,172 @@ body {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.5;
   color: hsl(237, 12%, 33%);
+
+  background-image: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
 }
 
 .u-margin-big {
+  margin-bottom: 4.8rem;
 }
 .u-margin-small {
+  margin-bottom: 1.5rem;
 }
 .u-margin-medium {
+  margin-bottom: 3rem;
 }
 
 .card-container {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 14.8rem;
+  padding-bottom: 8.5rem;
+}
+
+.card {
+  max-width: 32.7rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 2rem;
+  box-shadow: 0 2rem 4rem;
+
+  position: relative;
+
+  margin: auto;
+}
+
+.card::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 18rem;
+
+  background-image: url(images/illustration-woman-online-mobile.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  top: -10.8rem;
+
+  filter: drop-shadow(0 3.2rem hsl(240, 67%, 96%));
+}
+
+.faq {
+  padding: 13.5rem 2.4rem 4.8rem;
+}
+
+.faq-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.question {
+  position: relative;
+  cursor: pointer;
+
+  font-size: 1.4rem;
+}
+.question:hover {
+  color: hsl(14, 88%, 65%);
+}
+.checkbox-hidden {
+  display: none;
+}
+.answer {
+  display: none;
+}
+.checkbox-hidden:checked + label > .question {
+  font-weight: 700;
+}
+.checkbox-hidden:checked + label > .question::after {
+  background-position: top 0.67rem left;
+  transform: rotate(180deg);
+}
+
+.checkbox-hidden:checked ~ .answer {
+  display: block;
+}
+
+.question::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(images/icon-arrow-down.svg);
+  background-position: top 0.67rem right;
+  background-repeat: no-repeat;
+  /* Calculation of 6.7px is as follows.
+  We want to center the arrow in the middle of the first line of the paragraph, which has 2.4px height. The arrow is 7px height.
+  We can use the same rule background-position percentages already use: (container-height - element-height) x% = element offset from the edge.
+  */
+}
+
+hr {
+  border: unset;
+
+  border-top: 0.1rem solid hsl(240, 5%, 91%);
+}
+
+@media only screen and (min-width: 1024px) {
+  .card-container {
+    padding-top: 12.9rem;
+    padding-bottom: 13rem;
+  }
+
+  .card {
+    max-width: 92.1rem;
+    min-height: 50.9rem;
+    display: flex;
+  }
+  .card::before {
+    position: static;
+    width: 38.9rem;
+    height: inherit;
+    filter: none;
+
+    background-image: url(images/illustration-woman-online-desktop.svg),
+      url(images/bg-pattern-desktop.svg);
+    background-position: bottom 8rem right, bottom -12.4rem right;
+  }
+  .card::after {
+    display: block;
+    content: "";
+    width: 19.1rem;
+    height: 18.4rem; /* Intrinsic image size */
+
+    background-image: url(images/illustration-box-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    position: absolute;
+    bottom: 12rem;
+    left: -9.3rem;
+  }
+
+  .faq {
+    box-sizing: content-box;
+    width: 35rem;
+    padding-top: 6.8rem;
+    padding-bottom: 8.3rem;
+    padding-right: 9.5rem;
+    padding-left: 8.7rem;
+  }
+
+  .faq-heading {
+    font-size: 3.2rem;
+    text-align: left;
+  }
+
+  .question::after {
+    background-position: top 0.84rem right 1.4rem;
+  }
+
+  .checkbox-hidden:checked + label > .question::after {
+    background-position: top 0.84rem left 1.4rem;
+  }
 }
