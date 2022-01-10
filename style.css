@@ -82,6 +82,7 @@ body {
 }
 
 .question {
+  display: block;
   position: relative;
   cursor: pointer;
 
@@ -95,11 +96,12 @@ body {
 }
 .answer {
   display: none;
+  padding-top: 1.5rem;
 }
-.checkbox-hidden:checked + label > .question {
+.checkbox-hidden:checked + .question {
   font-weight: 700;
 }
-.checkbox-hidden:checked + label > .question::after {
+.checkbox-hidden:checked + .question::after {
   background-position: top 0.67rem left;
   transform: rotate(180deg);
 }
@@ -183,7 +185,7 @@ hr {
     background-position: top 0.84rem right 1.4rem;
   }
 
-  .checkbox-hidden:checked + label > .question::after {
+  .checkbox-hidden:checked + .question::after {
     background-position: top 0.84rem left 1.4rem;
   }
 }
